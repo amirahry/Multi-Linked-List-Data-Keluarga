@@ -11,8 +11,8 @@ int main() {
         cout << "\n2. Tambah Anak";
         cout << "\n3. Hubungkan Ortu-Anak";
         cout << "\n4. Tampilkan Semua";
-        cout << "\n5. Anak dari Ortu";
-        cout << "\n6. Ortu dari Anak";
+        cout << "\n5. Lihat Anak dari Orang Tua";
+        cout << "\n6. Lihat Orang Tua dari Anak";
         cout << "\n7. Hapus Orang Tua";
         cout << "\n8. Hapus Anak";
         cout << "\n9. Statistik";
