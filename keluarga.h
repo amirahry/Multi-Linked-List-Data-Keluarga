@@ -5,28 +5,28 @@
 #include <string>
 using namespace std;
 
-struct Anak;
+//Pengenalan Struct Sebelum Digunakan
+struct Anak; 
 struct OrangTua;
 struct Relasi;
 
+//Alias Pointer
 typedef Anak* adrAnak;
 typedef OrangTua* adrOrangTua;
 typedef Relasi* adrRelasi;
 
-// node anak
+//Struktur Data
 struct Anak {
     string nama;
     char jk;
     adrAnak next;
 };
 
-// node relasi
 struct Relasi {
     adrAnak anak;
     adrRelasi next;
 };
 
-// node orang tua
 struct OrangTua {
     string nama;
     char jk;
@@ -34,7 +34,7 @@ struct OrangTua {
     adrOrangTua next;
 };
 
-// list
+// List
 struct ListAnak {
     adrAnak first;
 };
@@ -43,30 +43,38 @@ struct ListOrangTua {
     adrOrangTua first;
 };
 
-// fungsi
+//Fungsi-Fungsi Utama
+
+//inisialisasi list kosong
 void initList(ListOrangTua& LO, ListAnak& LA);
 
+//membuat node baru
 adrOrangTua createOrangTua(string nama, char jk);
 adrAnak createAnak(string nama, char jk);
 adrRelasi createRelasi(adrAnak a);
 
+//menambahkan node ke akhir list
 void insertOrangTuaLast(ListOrangTua& LO, adrOrangTua o);
 void insertAnakLast(ListAnak& LA, adrAnak a);
 
+//mencari node berdasarkan nama
 adrOrangTua findOrangTua(ListOrangTua LO, string nama);
 adrAnak findAnak(ListAnak LA, string nama);
 
+//hubungkan orang tua dengan anak
 void hubungkan(adrOrangTua o, adrAnak a);
 
+//menampilkan data
 void showAll(ListOrangTua LO);
 void showAnakDariOrtu(ListOrangTua LO, string namaOrtu);
 void showOrtuDariAnak(ListOrangTua LO, string namaAnak);
 
+//hapus node beserta relasinya
 void deleteAnak(ListAnak& LA, ListOrangTua& LO, string nama);
 void deleteOrangTua(ListOrangTua& LO, string nama);
 
+//menampilkan statistik
 int countAnak(adrOrangTua o);
 void showOrtuEkstrem(ListOrangTua LO);
 
 #endif
-
